@@ -13,13 +13,13 @@ let interval;
 
 function stopwatch(){
 msec++;
-if(msec / 10 == 1){
+if(msec / 60 == 1){
  sec++;
  msec = 0;
- if(sec / 10 == 1){
+ if(sec / 60 == 1){
   min++;
   sec = 0;
-  if(min / 10 == 1){
+  if(min / 60 == 1){
   hrs++;
   min = 0;
   }
@@ -34,7 +34,7 @@ timer.innerHTML = hrs + ":" + min + ":" + sec + ":" + msec;
 
 
 start.addEventListener("click", function(){
-interval = setInterval(stopwatch, 1000);
+interval = setInterval(stopwatch, 100);
 start.setAttribute("disabled", true);
 stop.removeAttribute("disabled");
 reset.removeAttribute("disabled");
